@@ -1,55 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C Language PPTs — Topics</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-Language PPTs</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="topbar">
-<div class="container">
-<a class="brand" href="index.html">C-Language PPTs</a>
-<nav>
-<a href="index.html" class="btn">Home</a>
-</nav>
-</div>
-</header>
+  <header>
+    <h1>📘 C-Language PPTs</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="c-language.html">C Language PPTs</a>
+    </nav>
+  </header>
 
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Topics</h3>
+      <ul id="topicList"></ul>
+    </aside>
 
-<div class="container layout">
-<aside class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<h3>📚 Topics</h3>
-<button id="toggleSidebar" class="small">☰</button>
-</div>
-<input id="search" placeholder="Search topics..." class="search" />
-<ul id="topicsList" class="topics-list"></ul>
-</aside>
+    <main class="content">
+      <h2 id="topicTitle">Select a topic</h2>
+      <div id="slides"></div>
+      <a id="downloadBtn" href="#" target="_blank" class="download-btn">⬇️ Download PPT</a>
+    </main>
+  </div>
 
-
-<section class="content" id="content">
-<div id="topicTitle" class="topic-title">Select a topic from the left</div>
-
-
-<div id="slidesContainer" class="slides-container">
-<!-- slides will be injected here -->
-</div>
-
-
-<div id="downloadArea" class="download-area">
-<!-- download button will be injected -->
-</div>
-</section>
-</div>
-
-
-<footer class="footer">
-<div class="container">Made with ❤️ • Your Name</div>
-</footer>
-
-
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
