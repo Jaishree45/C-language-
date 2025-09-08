@@ -28,7 +28,7 @@ function loadTopic(topicId, topics) {
   const previewContainer = document.getElementById("previewContainer");
   previewContainer.innerHTML = "";
 
-  // Try to load up to 20 PNG slides
+  // Try to load up to 50 PNG slides
   let i = 1;
   function loadNext() {
     const img = new Image();
@@ -37,7 +37,7 @@ function loadTopic(topicId, topics) {
     img.onload = () => {
       previewContainer.appendChild(img);
       i++;
-      loadNext(); // load next image
+      loadNext(); // keep loading until no more
     };
 
     img.onerror = () => {
