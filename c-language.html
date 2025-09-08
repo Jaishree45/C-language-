@@ -5,10 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C Language PPTs</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .home-btn {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .home-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>C Language PPTs</h1>
+    <!-- Home button in header -->
+    <a href="index.html" class="home-btn">🏠 Home</a>
   </header>
 
   <div class="container">
@@ -19,10 +37,7 @@
 
     <main class="content">
       <h2 id="topicTitle">Select a topic</h2>
-      <!-- this is where preview images go -->
       <div id="previewContainer" class="slides"></div>
-
-      <!-- download button -->
       <a id="downloadLink" class="download-btn" href="#" target="_blank">Download PPT</a>
     </main>
   </div>
