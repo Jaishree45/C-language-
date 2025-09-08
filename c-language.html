@@ -5,6 +5,124 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>C Language PPTs</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #007BFF, #00C6FF);
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    /* Home Button */
+    .home-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 12px #007BFF, 0 0 24px #007BFF;
+      transition: 0.3s ease;
+    }
+    .home-btn:hover {
+      background: #0056b3;
+      box-shadow: 0 0 20px #0056b3, 0 0 40px #0056b3;
+      transform: scale(1.05);
+    }
+
+    main.container {
+      display: flex;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    aside.sidebar {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    aside.sidebar h2 {
+      margin-bottom: 15px;
+      color: #007BFF;
+    }
+
+    aside.sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    aside.sidebar li {
+      margin: 10px 0;
+    }
+
+    aside.sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    aside.sidebar a:hover {
+      color: #007BFF;
+    }
+
+    section.content {
+      flex: 3;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    section.content h2 {
+      margin-top: 0;
+      color: #007BFF;
+    }
+
+    #downloadLink {
+      display: inline-block;
+      margin: 10px 0 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    #downloadLink:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #bbb;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -24,6 +142,10 @@
       <div id="previewContainer"></div>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 Jaishree Suthar | Hosted on GitHub Pages</p>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
