@@ -1,3 +1,7 @@
+// Hide home button on homepage
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  document.getElementById("homeBtn").style.display = "none";
+}
 // Load topics list
 fetch("topics.json")
   .then(response => response.json())
