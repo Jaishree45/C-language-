@@ -1,0 +1,20 @@
+[
+{
+"id": "introduction",
+"title": "Introduction to C",
+"slides": 4,
+"drive": "https://docs.google.com/presentation/d/1Kawp_NK1osNv_W2PDiXZ50zhxiByFHcR/edit?usp=sharing&ouid=108257128332892511619&rtpof=true&sd=true"
+},
+{
+"id": "loops",
+"title": "Loops in C",
+"slides": 6,
+"drive": "https://docs.google.com/presentation/d/1EgruryRHArUsy5mJjh1TPR7QJDOuYn01/edit?usp=drive_link&ouid=108257128332892511619&rtpof=true&sd=true"
+},
+{
+"id": "arrays",
+"title": "Arrays",
+"slides": 5,
+"drive": "https://docs.google.com/presentation/d/18oUoz2409cGS2G6AuSSYAUCxtvrAoXx7/edit?usp=drive_link&ouid=108257128332892511619&rtpof=true&sd=true"
+}
+]
