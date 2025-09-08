@@ -14,11 +14,12 @@
     }
 
     header {
-      text-align: center;
-      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 20px;
       background: linear-gradient(135deg, #007BFF, #00C6FF);
       color: white;
-      position: relative;
     }
 
     header h1 {
@@ -26,11 +27,8 @@
       margin: 0;
     }
 
-    /* Home Button */
+    /* Home Button (right side) */
     .home-btn {
-      position: absolute;
-      left: 20px;
-      top: 20px;
       padding: 10px 20px;
       background: #007BFF;
       color: #fff;
@@ -100,7 +98,7 @@
     }
 
     #downloadLink {
-      display: inline-block;
+      display: none; /* Hidden by default */
       margin: 10px 0 20px;
       padding: 10px 20px;
       background: #007BFF;
@@ -146,6 +144,19 @@
   <footer>
     <p>© 2025 Jaishree Suthar | Hosted on GitHub Pages</p>
   </footer>
+
+  <script>
+    // Modify behavior of download button
+    const downloadLink = document.getElementById("downloadLink");
+    const topicTitle = document.getElementById("topicTitle");
+
+    // Example: When a topic is selected (replace with your real JS logic)
+    function selectTopic(title, link) {
+      topicTitle.textContent = title;
+      downloadLink.href = link;
+      downloadLink.style.display = "inline-block"; // show button only after topic selected
+    }
+  </script>
 
   <script src="js/app.js"></script>
 </body>
