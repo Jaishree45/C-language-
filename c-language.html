@@ -2,64 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>C Language PPTs</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    header {
-  display: flex;
-  justify-content: space-between; /* pushes title left, button right */
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #0d47a1; /* dark blue */
-  color: white;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.home-btn {
-  padding: 8px 16px;
-  background-color: #2196f3;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-.home-btn:hover {
-  background-color: #1565c0;
-}
-
-
-    .home-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
   <header>
-  <h1>C Language PPTs</h1>
-  <a href="index.html" class="home-btn">🏠 Home</a>
-</header>
+    <h1>C Language PPTs</h1>
+    <a href="index.html" class="home-btn">🏠 Home</a>
+  </header>
 
-
-  <div class="container">
+  <main class="container">
     <aside class="sidebar">
       <h2>Topics</h2>
       <ul id="topicsList"></ul>
     </aside>
 
-    <main class="content">
+    <section class="content">
       <h2 id="topicTitle">Select a topic</h2>
-      <div id="previewContainer" class="slides"></div>
-      <a id="downloadLink" class="download-btn" href="#" target="_blank">Download PPT</a>
-    </main>
-  </div>
+      <a id="downloadLink" href="#" target="_blank">Download PPT</a>
+      <div id="previewContainer"></div>
+    </section>
+  </main>
 
   <script src="js/app.js"></script>
 </body>
