@@ -1,39 +1,48 @@
-// Load topics dynamically from topics.json
+// Load topics list
 fetch("topics.json")
   .then(response => response.json())
   .then(data => {
-    const topicList = document.getElementById("topicList");
-    const urlParams = new URLSearchParams(window.location.search);
-    const currentTopic = urlParams.get("topic");
-
+    const topicsList = document.getElementById("topicsList");
     data.topics.forEach(topic => {
       const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.textContent = topic.name;
-      a.href = `c-language.html?topic=${topic.id}`;
-      li.appendChild(a);
-      topicList.appendChild(li);
-
-      // Load topic if matches
-      if (currentTopic === topic.id) {
-        loadTopic(topic);
-      }
+      li.innerHTML = `<a href="c-language.html?topic=${topic.id}">${topic.name}</a>`;
+      topicsList.appendChild(li);
     });
+
+    // Load topic if query param exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const topicId = urlParams.get("topic");
+    if (topicId) {
+      loadTopic(topicId, data.topics);
+    }
   });
 
-function loadTopic(topic) {
+// Function to load topic previews
+function loadTopic(topicId, topics) {
+  const topic = topics.find(t => t.id === topicId);
+  if (!topic) return;
+
   document.getElementById("topicTitle").textContent = topic.name;
-  const slidesDiv = document.getElementById("slides");
-  slidesDiv.innerHTML = "";
+  document.getElementById("downloadLink").href = topic.drive;
 
-  // Assume images named 1.png, 2.png, ...
-  for (let i = 1; i <= 10; i++) {
-    const img = document.createElement("img");
+  const previewContainer = document.getElementById("previewContainer");
+  previewContainer.innerHTML = "";
+
+  // Try to load up to 20 PNG slides
+  let i = 1;
+  function loadNext() {
+    const img = new Image();
     img.src = `assets/previews/${topic.id}/${i}.png`;
-    img.alt = `Slide ${i}`;
-    img.onerror = () => img.remove(); // remove if image not found
-    slidesDiv.appendChild(img);
-  }
 
-  document.getElementById("downloadBtn").href = topic.drive;
+    img.onload = () => {
+      previewContainer.appendChild(img);
+      i++;
+      loadNext(); // load next image
+    };
+
+    img.onerror = () => {
+      // stop when no more images
+    };
+  }
+  loadNext();
 }
