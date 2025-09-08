@@ -1,114 +1,95 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
-/* Body */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Poppins', sans-serif;
+  background: #0b0f1e;
   color: #e0e0e0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Header */
 header {
-  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
-  color: #fff;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  padding: 20px 40px;
+  background: linear-gradient(90deg,#120d4c,#1f1a6e);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  background: linear-gradient(90deg,#00f2fe,#4facfe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Home button */
-header a {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+header a.home-btn {
+  background: linear-gradient(90deg,#00c6ff,#0072ff);
   padding: 10px 20px;
   border-radius: 30px;
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 10px #00c6ff, 0 0 20px #0072ff;
-  transition: 0.3s;
+  font-weight: 600;
+  box-shadow: 0 0 10px #00c6ff,0 0 20px #0072ff;
+  transition: transform 0.3s;
 }
 
-header a:hover {
-  transform: scale(1.1);
-}
+header a.home-btn:hover { transform: scale(1.1); }
 
-/* Layout */
-main {
-  display: flex;
-  flex: 1;
-}
+main.container { display: flex; flex: 1; }
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  width: 260px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
   padding: 20px;
   border-right: 1px solid rgba(255,255,255,0.1);
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
 }
 
 .sidebar h2 {
-  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
   color: #00f2fe;
-  text-shadow: 0 0 10px #00f2fe;
+  margin-bottom: 20px;
 }
 
-.sidebar ul {
-  list-style: none;
-}
+.sidebar ul { list-style: none; }
 
-.sidebar ul li {
-  margin: 15px 0;
-}
+.sidebar ul li { margin: 15px 0; }
 
 .sidebar ul li a {
-  text-decoration: none;
   color: #e0e0e0;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
   font-weight: 500;
   transition: 0.3s;
-  padding: 8px 12px;
-  display: block;
-  border-radius: 8px;
 }
 
 .sidebar ul li a:hover {
-  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  background: linear-gradient(90deg,#00f2fe,#4facfe);
   color: #111;
   box-shadow: 0 0 10px #00f2fe;
 }
 
-/* Content Area */
-.content {
-  flex: 1;
-  padding: 30px;
-}
+/* Content area */
+.content { flex: 1; padding: 30px; overflow-y: auto; }
 
 .content h2 {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
+  font-family: 'Orbitron', sans-serif;
   color: #4facfe;
+  margin-bottom: 20px;
 }
 
 /* Download button */
@@ -116,13 +97,13 @@ main {
   display: inline-block;
   margin-bottom: 20px;
   padding: 12px 25px;
-  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  background: linear-gradient(90deg,#43e97b,#38f9d7);
   color: #111;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 10px #38f9d7;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 #downloadLink:hover {
@@ -130,10 +111,10 @@ main {
   box-shadow: 0 0 20px #38f9d7;
 }
 
-/* Preview container */
+/* Preview grid */
 #previewContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
   gap: 20px;
 }
 
@@ -141,7 +122,7 @@ main {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 #previewContainer img:hover {
