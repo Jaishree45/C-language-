@@ -26,7 +26,7 @@ function loadTopic(topic) {
   const slidesDiv = document.getElementById("slides");
   slidesDiv.innerHTML = "";
 
-  // Assume images named 1.jpg, 2.jpg, ...
+  // Assume images named 1.png, 2.png, ...
   for (let i = 1; i <= 10; i++) {
     const img = document.createElement("img");
     img.src = `assets/previews/${topic.id}/${i}.png`;
