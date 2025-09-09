@@ -1,6 +1,7 @@
 // Hide home button on homepage
 if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
-  document.getElementById("homeBtn").style.display = "none";
+  const homeBtn = document.getElementById("homeBtn");
+  if (homeBtn) homeBtn.style.display = "none";
 }
 
 // Load topics list
@@ -20,8 +21,9 @@ fetch("topics.json")
     if (topicId) {
       loadTopic(topicId, data.topics);
     } else {
-      // NEW: Hide download button if no topic is selected
-      document.getElementById("downloadLink").style.display = "none";
+      // Hide download button if no topic selected
+      const dlBtn = document.getElementById("downloadLink");
+      if (dlBtn) dlBtn.style.display = "none";
     }
   });
 
@@ -32,13 +34,15 @@ function loadTopic(topicId, topics) {
 
   document.getElementById("topicTitle").textContent = topic.name;
 
-  // NEW: Show download button only when topic exists
+  // ✅ Handle download button visibility
   const downloadBtn = document.getElementById("downloadLink");
-  if (topic.drive) {
-    downloadBtn.href = topic.drive;
-    downloadBtn.style.display = "inline-block";
-  } else {
-    downloadBtn.style.display = "none";
+  if (downloadBtn) {
+    if (topic.drive && topic.drive.trim() !== "") {
+      downloadBtn.href = topic.drive;
+      downloadBtn.style.display = "inline-block"; // show it
+    } else {
+      downloadBtn.style.display = "none"; // hide if no link
+    }
   }
 
   const previewContainer = document.getElementById("previewContainer");
