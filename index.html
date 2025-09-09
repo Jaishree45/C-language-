@@ -13,45 +13,52 @@
       color: #333;
     }
 
+    /* Hero Section */
     header {
-      text-align: center;
-      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full screen */
       background: linear-gradient(135deg, #007BFF, #00C6FF);
       color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
     header p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      max-width: 700px;
     }
 
     /* Glowing Button */
     .glow-button {
       display: inline-block;
-      padding: 15px 35px;
-      font-size: 18px;
+      padding: 18px 40px;
+      font-size: 20px;
       font-weight: bold;
       color: #fff;
       text-decoration: none;
       background: #007BFF;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 15px #007BFF, 0 0 30px #007BFF, 0 0 45px #007BFF;
       transition: all 0.3s ease-in-out;
     }
     .glow-button:hover {
       background: #0056b3;
       box-shadow: 0 0 25px #0056b3, 0 0 50px #0056b3, 0 0 75px #0056b3;
-      transform: scale(1.05);
+      transform: scale(1.07);
     }
 
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 60px auto;
       padding: 0 20px;
       text-align: center;
     }
@@ -61,7 +68,6 @@
       padding: 20px;
       background: #222;
       color: #bbb;
-      margin-top: 50px;
       font-size: 0.9rem;
     }
 
@@ -72,12 +78,14 @@
   </style>
 </head>
 <body>
+  <!-- Hero Section -->
   <header>
     <h1>📘 C-Language PPTs Collection</h1>
     <p>Learn C Language with well-structured and easy-to-follow presentations.</p>
-    <a href="c-language.html" class="glow-button">Start Learning</a>
+    <a href="c-language.html" class="glow-button">🚀 Start Learning</a>
   </header>
 
+  <!-- Extra Info Section -->
   <main>
     <section>
       <h2>Welcome 👋</h2>
@@ -89,7 +97,9 @@
   </main>
 
   <footer>
-    <p>© 2025 Jaishree Suthar | Hosted on GitHub Pages | <a href="https://github.com/Jaishree45">GitHub</a></p>
+    <p>© 2025 Jaishree Suthar | Hosted on GitHub Pages | 
+      <a href="https://github.com/Jaishree45">GitHub</a>
+    </p>
   </footer>
 </body>
 </html>
