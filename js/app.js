@@ -2,6 +2,7 @@
 if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
   document.getElementById("homeBtn").style.display = "none";
 }
+
 // Load topics list
 fetch("topics.json")
   .then(response => response.json())
@@ -18,6 +19,9 @@ fetch("topics.json")
     const topicId = urlParams.get("topic");
     if (topicId) {
       loadTopic(topicId, data.topics);
+    } else {
+      // NEW: Hide download button if no topic is selected
+      document.getElementById("downloadLink").style.display = "none";
     }
   });
 
@@ -27,7 +31,15 @@ function loadTopic(topicId, topics) {
   if (!topic) return;
 
   document.getElementById("topicTitle").textContent = topic.name;
-  document.getElementById("downloadLink").href = topic.drive;
+
+  // NEW: Show download button only when topic exists
+  const downloadBtn = document.getElementById("downloadLink");
+  if (topic.drive) {
+    downloadBtn.href = topic.drive;
+    downloadBtn.style.display = "inline-block";
+  } else {
+    downloadBtn.style.display = "none";
+  }
 
   const previewContainer = document.getElementById("previewContainer");
   previewContainer.innerHTML = "";
