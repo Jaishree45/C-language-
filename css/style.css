@@ -3,14 +3,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #0b0f1e;
-  color: #e0e0e0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* prevent sideways scroll */
 }
-
 header {
   display: flex;
   justify-content: space-between;
@@ -61,16 +58,13 @@ header a.home-btn {
 }
 
 header a.home-btn:hover { transform: scale(1.1); }
-/* ---------- Layout: make the main row fixed left ---------- */
-main.container{
+main.container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;      /* <— critical: no centering */
-  gap: 24px;                        /* space between sidebar & content */
-  width: 100%;
-  max-width: none;                   /* override any global container width */
-  margin: 0;                         /* remove auto-centering */
+  justify-content: flex-start;
+  width: 100%;       /* stretch full width */
+  margin: 0;         /* no auto-centering */
   padding: 0;
 }
 /* ---------- Sidebar: lock to the left edge ---------- */
@@ -145,11 +139,24 @@ main.container{
 }
 #downloadLink:hover{ transform: scale(1.05); box-shadow: 0 0 20px #38f9d7; }
 
-/* ---------- Nice empty state when no topic selected ---------- */
-#previewContainer:empty::before{
-  content: "Select a topic to preview the slides.";
-  display: block;
-  color: #666;
-  font-weight: 500;
-  padding: 12px 0;
+/* Preview grid */
+#previewContainer {
+  display: grid;
+  grid-template-columns: 1fr;  /* always one full-width column */
+  gap: 20px;
+}
+
+/* Images scale correctly */
+#previewContainer img {
+  width: 100%;         /* fill available width */
+  height: auto;        /* keep aspect ratio */
+  border-radius: 12px;
+  object-fit: contain; /* no cropping */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+#previewContainer img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #00f2fe;
 }
