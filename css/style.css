@@ -67,27 +67,33 @@ main.container { display: flex; flex: 1; }
 /* Sidebar */
 .sidebar {
   width: 260px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.95); /* stronger background so black text is visible */
   padding: 20px;
-  border-right: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
   height: calc(100vh - 80px);
   position: sticky;
   top: 80px;
+  left: 0; /* stick to the very left */
 }
 
+/* Sidebar heading */
 .sidebar h2 {
   font-family: 'Orbitron', sans-serif;
-  color: #00f2fe;
+  color: #0072ff;
   margin-bottom: 20px;
 }
 
-.sidebar ul { list-style: none; }
+/* Sidebar links */
+.sidebar ul {
+  list-style: none;
+}
 
-.sidebar ul li { margin: 15px 0; }
+.sidebar ul li {
+  margin: 15px 0;
+}
 
 .sidebar ul li a {
-  color: #e0e0e0;
+  color: #000; /* black by default */
   text-decoration: none;
   display: block;
   padding: 8px 12px;
