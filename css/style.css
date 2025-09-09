@@ -148,3 +148,22 @@ main.container { display: flex; flex: 1; }
   transform: scale(1.05);
   box-shadow: 0 0 20px #00f2fe;
 }
+/* Sidebar on the right */
+aside.sidebar {
+  order: 2;
+}
+section.content {
+  order: 1;
+}
+
+/* Sidebar links visibility */
+aside.sidebar a {
+  text-decoration: none;
+  color: #000; /* black text for visibility */
+  font-weight: 500;
+  transition: 0.3s;
+}
+aside.sidebar a:hover {
+  color: #007BFF;
+}
+
