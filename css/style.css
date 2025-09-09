@@ -61,16 +61,21 @@ header a.home-btn {
 }
 
 header a.home-btn:hover { transform: scale(1.1); }
-/* Main container layout */
-main.container {
+/* ---------- Layout: make the main row fixed left ---------- */
+main.container{
   display: flex;
-  flex-direction: row; /* row layout */
-  flex: 1;
-  margin: 0; /* remove any centering gaps */
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;      /* <— critical: no centering */
+  gap: 24px;                        /* space between sidebar & content */
+  width: 100%;
+  max-width: none;                   /* override any global container width */
+  margin: 0;                         /* remove auto-centering */
   padding: 0;
-}/* Sidebar */
-/* Sidebar - stick to left */
-.sidebar {
+}
+/* ---------- Sidebar: lock to the left edge ---------- */
+.sidebar{
+  flex: 0 0 260px;                   /* fixed width, no shrink */
   width: 260px;
   background: rgba(255,255,255,0.95);
   padding: 20px;
@@ -78,28 +83,23 @@ main.container {
   height: calc(100vh - 80px);
   position: sticky;
   top: 80px;
-  left: 0;
-  flex-shrink: 0; /* prevent shrinking */
+  left: 0;                           /* hug the left edge */
+  margin: 0;                         /* ensure no accidental margins */
 }
-
 /* Sidebar heading */
-.sidebar h2 {
+/* Sidebar heading */
+.sidebar h2{
   font-family: 'Orbitron', sans-serif;
   color: #0072ff;
   margin-bottom: 20px;
 }
 
-/* Sidebar links */
-.sidebar ul {
-  list-style: none;
-}
+/* ---------- Topic links: black by default ---------- */
+.sidebar ul{ list-style: none; }
+.sidebar ul li{ margin: 15px 0; }
 
-.sidebar ul li {
-  margin: 15px 0;
-}
-
-.sidebar ul li a {
-  color: #000; /* black by default */
+.sidebar ul li a{
+  color: #000;                       /* black for better visibility */
   text-decoration: none;
   display: block;
   padding: 8px 12px;
@@ -107,29 +107,33 @@ main.container {
   font-weight: 500;
   transition: 0.3s;
 }
-
-.sidebar ul li a:hover {
+.sidebar ul li a:hover{
   background: linear-gradient(90deg,#00f2fe,#4facfe);
   color: #111;
   box-shadow: 0 0 10px #00f2fe;
 }
 
-/* Content fills rest */
-.content {
-  flex: 1;
-  padding: 30px;
+/* ---------- Content panel: always stays on the right ---------- */
+.content{
+  flex: 1 1 auto;                    /* take remaining space */
+  min-width: 0;                      /* prevent overflow pushing layout */
+  padding: 24px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  min-height: calc(100vh - 140px);   /* looks stable even when empty */
   overflow-y: auto;
 }
-.content h2 {
-  font-family: 'Orbitron', sans-serif;
-  color: #4facfe;
-  margin-bottom: 20px;
+
+.content h2{
+  margin-top: 0;
+  color: #0072ff;
 }
 
-/* Download button */
-#downloadLink {
-  display: inline-block;
-  margin-bottom: 20px;
+/* Download button hidden until a topic is selected (optional) */
+#downloadLink{
+  display: none;
+  margin: 12px 0 20px;
   padding: 12px 25px;
   background: linear-gradient(90deg,#43e97b,#38f9d7);
   color: #111;
@@ -139,30 +143,13 @@ main.container {
   box-shadow: 0 0 10px #38f9d7;
   transition: transform 0.3s;
 }
+#downloadLink:hover{ transform: scale(1.05); box-shadow: 0 0 20px #38f9d7; }
 
-#downloadLink:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #38f9d7;
+/* ---------- Nice empty state when no topic selected ---------- */
+#previewContainer:empty::before{
+  content: "Select a topic to preview the slides.";
+  display: block;
+  color: #666;
+  font-weight: 500;
+  padding: 12px 0;
 }
-
-/* Preview grid */
-#previewContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
-  gap: 20px;
-}
-
-#previewContainer img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
-}
-
-#previewContainer img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00f2fe;
-}
-/* Sidebar on the right */
-
-
