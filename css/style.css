@@ -93,7 +93,7 @@ main.container {
 .sidebar ul li{ margin: 15px 0; }
 
 .sidebar ul li a{
-  color: #000;                       /* black for better visibility */
+  color: white;                       /* black for better visibility */
   text-decoration: none;
   display: block;
   padding: 8px 12px;
